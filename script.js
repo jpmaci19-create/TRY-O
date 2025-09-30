@@ -1,77 +1,65 @@
-const navBar = document.querySelector('.navbar');
-const navLinks = document.querySelector('.nav-links');
-const menuToggle = document.querySelector('.menu-toggle');
-const form = document.getElementById('contact-form');
-const feedback = document.querySelector('.form-feedback');
+// ========== NAVBAR TOGGLE (para móvil) ==========
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px',
-  }
-);
-
-document.querySelectorAll('.fade-up, .fade-in').forEach(element => {
-  observer.observe(element);
-});
-
-menuToggle.setAttribute('aria-expanded', 'false');
-navLinks.setAttribute('aria-hidden', 'true');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 10) {
-    navBar.classList.add('scrolled');
-  } else {
-    navBar.classList.remove('scrolled');
-  }
-});
-
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  menuToggle.classList.toggle('open');
-  const isOpen = menuToggle.classList.contains('open');
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  navLinks.setAttribute('aria-hidden', String(!isOpen));
-});
-
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    menuToggle.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    navLinks.setAttribute('aria-hidden', 'true');
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
   });
+}
+
+// ========== SCROLL ANIMATIONS ==========
+const faders = document.querySelectorAll(".fade-in, .fade-up");
+
+const appearOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px",
+};
+
+const appearOnScroll = new IntersectionObserver(function (
+  entries,
+  observer
+) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("appear");
+    observer.unobserve(entry.target);
+  });
+},
+appearOptions);
+
+faders.forEach((fader) => {
+  appearOnScroll.observe(fader);
 });
 
-form.addEventListener('submit', event => {
-  event.preventDefault();
-  const name = form.name.value.trim();
-  const email = form.email.value.trim();
-  const message = form.message.value.trim();
+// ========== FORM VALIDATION ==========
+const form = document.getElementById("contact-form");
+const feedback = document.querySelector(".form-feedback");
 
-  if (!name || !email || !message) {
-    feedback.textContent = 'Por favor completa todos los campos.';
-    feedback.style.color = '#ff3b30';
-    return;
-  }
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
 
-  if (!emailPattern.test(email)) {
-    feedback.textContent = 'Ingresa un email válido.';
-    feedback.style.color = '#ff3b30';
-    return;
-  }
+    if (name === "" || email === "" || message === "") {
+      feedback.textContent = "Por favor completa todos los campos.";
+      feedback.style.color = "red";
+      return;
+    }
 
-  feedback.textContent = '¡Mensaje enviado! Te contactaremos pronto.';
-  feedback.style.color = '#1aa260';
-  form.reset();
-});
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+      feedback.textContent = "Ingresa un correo válido.";
+      feedback.style.color = "red";
+      return;
+    }
+
+    // Aquí podrías enviar los datos a un backend o servicio de correo
+    feedback.textContent = "¡Gracias! Tu mensaje ha sido enviado.";
+    feedback.style.color = "green";
+    form.reset();
+  });
+}
