@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="TRY-O Solar Power Bank: cargador solar portátil de 10000mAh ideal para aventuras al aire libre."
+  />
   <title>TRY-O Solar Power Bank</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,11 +15,11 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="navbar">
+  <header class="navbar" role="banner">
     <div class="container nav-container">
       <div class="logo">TRY-O</div>
-      <nav>
-        <ul class="nav-links">
+      <nav aria-label="Navegación principal">
+        <ul id="primary-navigation" class="nav-links">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#producto">Producto</a></li>
           <li><a href="#beneficios">Beneficios</a></li>
@@ -23,7 +27,12 @@
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
-      <button class="menu-toggle" aria-label="Abrir menú">
+      <button
+        type="button"
+        class="menu-toggle"
+        aria-label="Abrir menú"
+        aria-controls="primary-navigation"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -49,42 +58,83 @@
         </div>
         <div class="product-grid">
           <article class="product-card fade-up">
-            <img src="solar-charge.jpg" alt="Carga solar y USB" />
+            <img
+              src="solar-charge.jpg"
+              alt="Carga solar y USB"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Carga solar y USB</h3>
             <p>Aprovecha la energía del sol o recarga por USB para estar siempre listo.</p>
           </article>
           <article class="product-card fade-up">
-            <img src="led-light.jpg" alt="Linterna LED doble" />
+            <img
+              src="led-light.jpg"
+              alt="Linterna LED doble"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Linterna LED doble (3 modos)</h3>
             <p>Iluminación poderosa con modos SOS, intermitente y luz constante.</p>
           </article>
           <article class="product-card fade-up">
-            <img src="waterproof.jpg" alt="Resistente al agua" />
+            <img
+              src="waterproof.jpg"
+              alt="Resistente al agua"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Resistente al agua, polvo y golpes</h3>
             <p>Construido para soportar cualquier clima y proteger tu energía.</p>
           </article>
           <article class="product-card fade-up">
-            <img src="charging-multiple.jpg" alt="Carga múltiples dispositivos" />
+            <img
+              src="charging-multiple.jpg"
+              alt="Carga múltiples dispositivos"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Carga hasta 3 dispositivos a la vez</h3>
             <p>Puertos inteligentes para cargar teléfonos, cámaras y más simultáneamente.</p>
           </article>
           <article class="product-card fade-up">
-            <img class="small" src="specs.jpg" alt="Especificaciones técnicas" />
+            <img
+              class="small"
+              src="specs.jpg"
+              alt="Especificaciones técnicas"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Especificaciones técnicas</h3>
             <p>Indicadores LED, panel solar eficiente y batería de alta densidad.</p>
           </article>
           <article class="product-card fade-up">
-            <img src="safety.jpg" alt="Multiprotecciones de seguridad" />
+            <img
+              src="safety.jpg"
+              alt="Multiprotecciones de seguridad"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Multiprotecciones de seguridad</h3>
             <p>Sistemas avanzados contra sobrecarga, sobrecalentamiento y cortocircuitos.</p>
           </article>
           <article class="product-card fade-up">
-            <img src="outdoor.jpg" alt="Ideal para camping" />
+            <img
+              src="outdoor.jpg"
+              alt="Ideal para camping"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Ideal para camping y excursiones</h3>
             <p>Compañero perfecto para aventuras al aire libre y viajes prolongados.</p>
           </article>
           <article class="product-card fade-up">
-            <img src="dimensions.jpg" alt="Dimensiones y puertos" />
+            <img
+              src="dimensions.jpg"
+              alt="Dimensiones y puertos"
+              loading="lazy"
+              decoding="async"
+            />
             <h3>Dimensiones y puertos</h3>
             <p>Diseño compacto con detalles que facilitan su transporte y uso diario.</p>
           </article>
@@ -136,15 +186,38 @@
           <form id="contact-form" novalidate>
             <div class="form-group">
               <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Tu nombre"
+                autocomplete="name"
+                required
+                aria-required="true"
+              />
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="tunombre@email.com" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tunombre@email.com"
+                autocomplete="email"
+                required
+                aria-required="true"
+              />
             </div>
             <div class="form-group">
               <label for="message">Mensaje</label>
-              <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Escribe tu mensaje"
+                required
+                aria-required="true"
+              ></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
@@ -160,13 +233,13 @@
       <p>© 2025 TRY-O. Todos los derechos reservados.</p>
       <div class="social-links">
         <a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener">
-          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
         </a>
         <a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener">
-          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
         </a>
         <a href="https://www.tiktok.com" aria-label="TikTok" target="_blank" rel="noopener">
-          <i class="fa-brands fa-tiktok"></i>
+          <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
         </a>
       </div>
     </div>

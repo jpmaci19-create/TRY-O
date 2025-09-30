@@ -31,6 +31,13 @@ a {
   text-decoration: none;
 }
 
+a:focus-visible,
+.btn:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -198,6 +205,7 @@ p {
   position: absolute;
   inset: 0;
   background-color: var(--color-overlay);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -428,6 +436,24 @@ textarea:focus {
 .visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-up,
+  .fade-in,
+  .visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 @media (max-width: 1024px) {
