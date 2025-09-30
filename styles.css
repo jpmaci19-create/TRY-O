@@ -191,7 +191,7 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url('images/backpack.jpg') center/cover no-repeat;
+  background: url('backpack.jpg') center/cover no-repeat;
   padding: 8rem 1.5rem 6rem;
 }
 
