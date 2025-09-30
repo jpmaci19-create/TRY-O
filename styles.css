@@ -476,3 +476,51 @@ button.btn-primary {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* Hero estilo anuncio */
+.hero-ad {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: url("images/backpack.jpg") center/cover no-repeat fixed;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero-container h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-btn {
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
