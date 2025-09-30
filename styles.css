@@ -236,7 +236,7 @@ img {
 .hero-media {
   position: absolute;
   inset: 0;
-  background: url('backpack.jpg') center/cover no-repeat;
+  background: url("images/backpack.jpg") center/cover no-repeat;
   transform: scale(1.05);
 }
 
