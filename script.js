@@ -63,3 +63,36 @@ if (form) {
     form.reset();
   });
 }
+// Tabs de colores con imagen dinámica
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+  const previewImg = document.getElementById("color-preview");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (btn.disabled) return; // No hacer nada si está deshabilitado
+
+      // Quitar active de todos
+      buttons.forEach(b => b.classList.remove("active"));
+      contents.forEach(c => c.classList.remove("active"));
+
+      // Activar el seleccionado
+      btn.classList.add("active");
+      const target = document.getElementById(btn.dataset.color);
+      if (target) target.classList.add("active");
+
+      // Cambiar la imagen según el color
+      if (btn.dataset.color === "azul") {
+        previewImg.src = "images/powerbank-azul.jpg";
+        previewImg.alt = "TRY-O Solar Power Bank Azul";
+      } else if (btn.dataset.color === "naranja") {
+        previewImg.src = "images/powerbank-naranja.jpg";
+        previewImg.alt = "TRY-O Solar Power Bank Naranja";
+      } else if (btn.dataset.color === "negro") {
+        previewImg.src = "images/powerbank-negro.jpg";
+        previewImg.alt = "TRY-O Solar Power Bank Negro";
+      }
+    });
+  });
+});
