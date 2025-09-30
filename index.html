@@ -7,144 +7,123 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <a href="#hero" class="logo">TRY-O</a>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#producto">Producto</a></li>
-        <li><a href="#beneficios">Beneficios</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#comprar">Comprar</a></li>
-        <li><a href="#" id="contact-btn">Contacto</a></li>
-      </ul>
-    </nav>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <a href="#hero">TRY-O</a>
+    </div>
+    <div class="hamburger" id="hamburger">☰</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#features">Características</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#benefits">Beneficios</a></li>
+      <li><a href="#testimonials">Testimonios</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#cta">Comprar</a></li>
+      <li><a href="#" id="contact-btn">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" class="fade-up">
+    <div class="hero-content">
+      <h1>TRY-O Solar Power Bank</h1>
+      <p>Energía confiable, resistente y siempre contigo.</p>
+      <a href="#cta" class="btn">Comprar ahora</a>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>TRY-O Solar Power Bank 🔋</h1>
-      <p>Energía en cualquier lugar. Resistente. Confiable. Listo para ti.</p>
-      <a href="#comprar" class="btn btn-accent">Comprar ahora</a>
-    </div>
-  </section>
-
-  <!-- Características -->
-  <section id="producto" class="section">
-    <h2>Características principales</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>🔋 10000mAh</h3>
-        <p>Carga tus dispositivos varias veces sin preocuparte por quedarte sin batería.</p>
-      </div>
-      <div class="feature">
-        <h3>☀️ Carga solar</h3>
-        <p>Recarga tu power bank con energía solar, ideal para exteriores.</p>
-      </div>
-      <div class="feature">
-        <h3>🌊 Resistente</h3>
-        <p>Impermeable, a prueba de polvo y golpes: hecho para la aventura.</p>
-      </div>
-      <div class="feature">
-        <h3>💡 Linterna LED</h3>
-        <p>Ilumina tu camino en campamentos o emergencias.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Galería -->
-  <section id="galeria" class="section">
-    <h2>Galería del producto</h2>
+  <!-- FEATURES -->
+  <section id="features" class="fade-up">
+    <h2>Características</h2>
     <div class="product-grid">
-      <div class="product-card"><img src="images/backpack.jpg" alt="Portátil y cómodo"></div>
-      <div class="product-card"><img src="images/charging-multiple.jpg" alt="Carga múltiple"></div>
-      <div class="product-card"><img src="images/dimensions.jpg" alt="Compacto"></div>
-      <div class="product-card"><img src="images/led-light.jpg" alt="Linterna LED"></div>
-      <div class="product-card"><img src="images/outdoor.jpg" alt="Perfecto para exteriores"></div>
-      <div class="product-card"><img src="images/safety.jpg" alt="Seguro y confiable"></div>
-      <div class="product-card"><img src="images/solar-charge.jpg" alt="Carga solar"></div>
-      <div class="product-card"><img src="images/specs.jpg" alt="Especificaciones"></div>
-      <div class="product-card"><img src="images/waterproof.jpg" alt="Resistente al agua"></div>
+      <div class="product-card"><img src="images/solar-charge.jpg" alt="Carga solar"><p>Carga Solar</p></div>
+      <div class="product-card"><img src="images/waterproof.jpg" alt="Resistente al agua"><p>Resistente al agua</p></div>
+      <div class="product-card"><img src="images/led-light.jpg" alt="Linterna LED"><p>Linterna LED</p></div>
+      <div class="product-card"><img src="images/charging-multiple.jpg" alt="Carga múltiple"><p>Carga múltiple</p></div>
     </div>
   </section>
 
-  <!-- Beneficios -->
-  <section id="beneficios" class="section">
-    <h2>¿Por qué elegir TRY-O?</h2>
-    <ul class="benefits">
-      <li>✔️ Energía confiable donde la necesites</li>
-      <li>✔️ Compatible con todos tus dispositivos</li>
-      <li>✔️ Diseño moderno y duradero</li>
-      <li>✔️ Ideal para viajes, campamentos y emergencias</li>
+  <!-- GALLERY -->
+  <section id="gallery" class="fade-up">
+    <h2>Galería</h2>
+    <div class="product-grid">
+      <div class="product-card"><img src="images/outdoor.jpg" alt="Uso en exteriores"></div>
+      <div class="product-card"><img src="images/backpack.jpg" alt="Powerbank en mochila"></div>
+      <div class="product-card"><img src="images/safety.jpg" alt="Seguridad"></div>
+      <div class="product-card"><img src="images/specs.jpg" alt="Especificaciones"></div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits" class="fade-up">
+    <h2>Beneficios</h2>
+    <ul>
+      <li>Portátil y ecológico con carga solar.</li>
+      <li>Resistente al agua, polvo y golpes.</li>
+      <li>Compatible con múltiples dispositivos.</li>
+      <li>Alta capacidad para varios ciclos de carga.</li>
     </ul>
   </section>
 
-  <!-- Testimonios -->
-  <section id="testimonios" class="section">
-    <h2>Lo que dicen nuestros clientes</h2>
-    <div class="testimonials">
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="fade-up">
+    <h2>Testimonios</h2>
+    <div class="testimonials-grid">
       <div class="testimonial">
-        <p>"Me salvó en un viaje de camping. Pude cargar mi celular y mi linterna toda la semana."</p>
-        <span>- Andrea, México</span>
+        <p>"Me salvó en un viaje de campamento, ¡impresionante autonomía!"</p>
+        <span>- Carlos</span>
       </div>
       <div class="testimonial">
-        <p>"Diseño resistente y práctico. Lo llevo en mi mochila todos los días."</p>
-        <span>- Carlos, España</span>
+        <p>"Resistente y confiable, incluso bajo la lluvia."</p>
+        <span>- Ana</span>
       </div>
       <div class="testimonial">
-        <p>"Excelente producto, lo usé en la playa y funcionó perfecto con la energía solar."</p>
-        <span>- Sofía, Chile</span>
+        <p>"Perfecto para viajes largos, puedo cargar varios dispositivos."</p>
+        <span>- Jorge</span>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="section">
+  <section id="faq" class="fade-up">
     <h2>Preguntas frecuentes</h2>
-    <div class="faq">
-      <div class="faq-item">
-        <h3>¿Cuánto tarda en cargarse por completo?</h3>
-        <p>Con cargador USB tarda entre 4 y 5 horas. Con energía solar depende de la exposición al sol.</p>
-      </div>
-      <div class="faq-item">
-        <h3>¿Es resistente al agua?</h3>
-        <p>Sí, tiene certificación de resistencia al agua y polvo (IPX6).</p>
-      </div>
-      <div class="faq-item">
-        <h3>¿Puedo cargar varios dispositivos a la vez?</h3>
-        <p>Sí, tiene puertos USB duales para cargar dos dispositivos simultáneamente.</p>
-      </div>
+    <div class="faq-item">
+      <h3>¿Cuánto tarda en cargarse con el sol?</h3>
+      <p>Aproximadamente 6 a 8 horas bajo luz solar directa.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Es resistente al agua?</h3>
+      <p>Sí, cuenta con certificación IPX6, resistente a salpicaduras y lluvia.</p>
+    </div>
+    <div class="faq-item">
+      <h3>¿Puedo cargar varios dispositivos a la vez?</h3>
+      <p>Sí, incluye puertos USB duales.</p>
     </div>
   </section>
 
-  <!-- CTA final -->
-  <section id="comprar" class="section cta">
-    <h2>Listo para tu próxima aventura</h2>
-    <p>No te quedes sin energía. Llévate el TRY-O Solar Power Bank hoy.</p>
-    <a href="https://www.paypal.com/ncp/payment/TULINKAQUI" target="_blank" class="btn btn-accent">Comprar con PayPal</a>
+  <!-- CTA -->
+  <section id="cta" class="fade-up">
+    <h2>Compra tu TRY-O ahora</h2>
+    <p>Obtén energía ilimitada en cualquier lugar.</p>
+    <a href="https://www.paypal.com/paypalme/tryopowerbank" target="_blank" class="btn">Pagar con PayPal</a>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- FOOTER -->
+  <footer class="fade-up">
     <p>© 2025 TRY-O. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Popup Modal -->
+  <!-- CONTACT MODAL -->
   <div id="contact-modal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span id="close-modal" class="close">&times;</span>
       <h2>Contacto</h2>
-      <p>📧 contact@try-o.com</p>
+      <p>Email: contacto@tryo.com</p>
+      <p>Tel: +52 55 1234 5678</p>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
