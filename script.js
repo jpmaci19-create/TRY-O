@@ -141,3 +141,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mostrar imagen inicial
   previewImg.classList.add("show");
 });
+// Hero estilo anuncio con frases dinámicas
+document.addEventListener("DOMContentLoaded", () => {
+  const heroText = document.getElementById("hero-text");
+
+  const frases = [
+    "Energía en cualquier lugar ⚡",
+    "Diseño resistente 🌊🔥",
+    "TRY-O Solar Power Bank 🔋"
+  ];
+
+  let index = 0;
+
+  function cambiarFrase() {
+    heroText.style.opacity = 0;
+    heroText.style.transform = "translateY(20px)";
+
+    setTimeout(() => {
+      index = (index + 1) % frases.length;
+      heroText.textContent = frases[index];
+      heroText.style.opacity = 1;
+      heroText.style.transform = "translateY(0)";
+    }, 500);
+  }
+
+  setInterval(cambiarFrase, 3000);
+});
