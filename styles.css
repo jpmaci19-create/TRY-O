@@ -239,7 +239,7 @@ p {
   overflow: hidden;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.07);
   display: grid;
-  grid-template-rows: 220px auto;
+  grid-template-rows: auto 1fr;
   padding-bottom: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -256,9 +256,13 @@ p {
 .product-card img.small {
   height: auto;
   max-height: 150px;
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
   background: #f9f9f9;
   padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .product-card h3 {
